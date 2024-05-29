@@ -1,9 +1,8 @@
-<!-- blog.component.html -->
 
-<!-- Blog Oluşturma Formu -->
+<!-- Create start-->
 <mat-card>
   <mat-card-content>
-    <h2>Create Blog Post</h2>
+    <h4>Create Blog Post</h4>
     <mat-form-field>
       <input matInput placeholder="Content" [(ngModel)]="newBlog.content">
     </mat-form-field>
@@ -13,14 +12,30 @@
     <button mat-raised-button color="primary" (click)="createBlog()">Create Post</button>
   </mat-card-content>
 </mat-card>
-
-<!-- Mevcut Blogları Listeleyen Kartlar -->
-<div class="blog-grid">
-  <mat-card *ngFor="let post of blogs" class="blog-card">
-    <mat-card-content>
-      <h2>{{ post.content }}</h2>
-      <img [src]="post.imageUrl" alt="Post Image">
-      <p>Created Date: {{ post.createdDate | date }}</p>
-    </mat-card-content>
-  </mat-card>
+<!-- Create end-->
+<!-- Read start-->
+<div class="blog_main">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h5 class="blog_text">Our Blog</h5>
+      </div>
+    </div>
+    <div class="blog_section_2">
+      <div class="row">
+        <div class="col-sm-4" *ngFor="let post of blogs">
+          <div class="section_1">
+            <div class="card mb-4">
+              <img [src]="post.imageUrl" style="max-width: 100%;" class="card-img-top" alt="Post Image">
+              <button type="button" class="date-bt">{{ post.createdDate | date: 'dd MMM yyyy' }}</button>
+              <div class="card-body">
+                <p class="card-text">{{ post.content }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+<!-- Read end-->

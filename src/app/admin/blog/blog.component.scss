@@ -1,11 +1,30 @@
-/* blog.component.css */
-
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
+.blog_main {
+  padding: 20px 0;
 }
 
-.blog-card {
+.blog_text {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.blog_section_2 .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section_1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
   width: 100%;
+}
+.date-bt {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin: 10px 0;
 }

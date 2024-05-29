@@ -47,11 +47,8 @@ export class BlogComponent implements OnInit {
     this.blogService.create(
       this.newBlog,
       (result) => {
-        // Yeni blog başarıyla oluşturulduğunda gerçekleştirilecek işlemler buraya yazılır
         console.log('Blog başarıyla oluşturuldu', result);
-        // Yeni blog oluşturulduktan sonra blogları yeniden yükle
         this.loadBlogs();
-        // Yeni blogu temizle
         this.newBlog = {
           content: '',
           imageUrl: '',
@@ -59,7 +56,6 @@ export class BlogComponent implements OnInit {
         };
       },
       (errorMessage) => {
-        // Hata durumunda gerçekleştirilecek işlemler buraya yazılır
         console.error('Blog oluşturulurken bir hata oluştu', errorMessage);
       }
     );
